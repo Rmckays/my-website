@@ -22,7 +22,6 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import { createMuiTheme } from '@material-ui/core/styles';
 import {Redirect} from "react-router-dom";
 import {ThemeProvider} from "@material-ui/styles";
-import {green} from "@material-ui/core/colors";
 
 const drawerWidth = 240;
 
@@ -47,7 +46,6 @@ const myTheme = createMuiTheme({
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
-        color: 'purple',
     },
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {

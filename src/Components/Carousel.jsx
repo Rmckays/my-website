@@ -19,8 +19,8 @@ const portfolioProjects = [
     }
 ];
 
-const carouselCards = portfolioProjects.map(project => {
-    return <MediaCard img={project.img} projTitle={project.title} projDescription={project.description} github={project.github} website={project.website}/>
+const carouselCards = portfolioProjects.map((project, index) => {
+    return <MediaCard key={index} img={project.img} projTitle={project.title} projDescription={project.description} github={project.github} website={project.website}/>
 });
 
 const PortfolioCarousel = () => {

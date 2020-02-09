@@ -24,6 +24,8 @@ const myTheme = createMuiTheme({
     },
 });
 
+
+
 const useStyles = makeStyles({
     root: {
         maxWidth: 400,
@@ -41,7 +43,7 @@ export default function MediaCard(props) {
 
     return (
         <Card className={classes.root}>
-            <CardActionArea href={props.website}>
+            <CardActionArea href={props.github}>
                 <CardMedia
                     className={classes.media}
                     image={props.img}
