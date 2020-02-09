@@ -19,25 +19,9 @@ import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import PersonIcon from '@material-ui/icons/Person';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-import { createMuiTheme } from '@material-ui/core/styles';
 import {Redirect} from "react-router-dom";
-import {ThemeProvider} from "@material-ui/styles";
 
 const drawerWidth = 240;
-
-const myTheme = createMuiTheme({
-    palette: {
-        type: 'dark',
-        primary: {
-            main: '#333',
-            hover: '#fff',
-        },
-        secondary: {
-            // This is green.A700 as hex.
-            main: '#11cb5f',
-        },
-    },
-});
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -98,13 +82,13 @@ const useStyles = makeStyles(theme => ({
 const getIcon = (index) => {
     switch(index){
         case 0:
-            return <EqualizerIcon />;
+            return <EqualizerIcon color="primary" />;
         case 1:
-            return <RecentActorsIcon />;
+            return <RecentActorsIcon color="primary" />;
         case 2:
-            return <PersonIcon />;
+            return <PersonIcon color="primary" />;
         case 3:
-            return <FileCopyIcon />
+            return <FileCopyIcon color="primary" />
     }
 };
 
@@ -145,56 +129,54 @@ const Navigation = () => {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <ThemeProvider theme={myTheme}>
-                <AppBar
-                    position="fixed"
-                    color="primary"
-                    className={clsx(classes.appBar, {
-                        [classes.appBarShift]: open,
-                    })}
-                >
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            edge="start"
-                            className={clsx(classes.menuButton, open && classes.hide)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap>
-                            Rustyn Simmons
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </ThemeProvider>
-            <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="left"
-                open={open}
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
+            <AppBar
+                position="fixed"
+                color="secondary"
+                className={clsx(classes.appBar, {
+                    [classes.appBarShift]: open,
+                })}
             >
-                <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                <Toolbar >
+                    <IconButton
+                        color="secondary"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        className={clsx(classes.menuButton, open && classes.hide)}
+                    >
+                        <MenuIcon color="primary" />
                     </IconButton>
-                </div>
-                <Divider />
-                {page}
-                <List>
-                    {['Skills', 'Portfolio', 'About', 'Resume'].map((text, index) => (
-                        <ListItem button page={text} key={text} onClick={navigateToPage}>
-                            <ListItemIcon>{getIcon(index)}</ListItemIcon>
-                            <ListItemText primary={text}/>
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-            </Drawer>
+                    <Typography variant="h6" noWrap color="primary">
+                        Rustyn Simmons
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+        <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="left"
+            open={open}
+            classes={{
+                paper: classes.drawerPaper,
+            }}
+        >
+            <div className={classes.drawerHeader}>
+                <IconButton onClick={handleDrawerClose}>
+                    {theme.direction === 'ltr' ? <ChevronLeftIcon color="primary" /> : <ChevronRightIcon />}
+                </IconButton>
+            </div>
+            <Divider />
+            {page}
+            <List color="primary">
+                {['Skills', 'Portfolio', 'About', 'Resume'].map((text, index) => (
+                    <ListItem button page={text} key={text} onClick={navigateToPage}>
+                        <ListItemIcon color="primary">{getIcon(index)}</ListItemIcon>
+                        <ListItemText color="primary" primary={text}/>
+                    </ListItem>
+                ))}
+            </List>
+            <Divider />
+        </Drawer>
         </div>
     );
 };

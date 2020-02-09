@@ -2,15 +2,35 @@ import React from 'react';
 import './App.css';
 import Navigation from "./Components/Navigation";
 import PortfolioCarousel from "./Components/Carousel";
+import {ThemeProvider} from "@material-ui/styles";
+import {createMuiTheme} from "@material-ui/core/styles";
+import {teal} from "@material-ui/core/colors";
 
-
+const myTheme = createMuiTheme({
+    palette: {
+        type: 'dark',
+        primary: {
+            main: '#333',
+            hover: '#fff',
+        },
+        secondary: {
+            main: teal[300],
+        },
+        background: {
+            // paper: "#333"
+            paper: teal[300]
+        }
+    },
+});
 
 function App() {
   return (
-    <div className="App">
-      <Navigation/>
-      <PortfolioCarousel/>
-    </div>
+    <ThemeProvider theme={myTheme}>
+        <div className="App">
+          <Navigation/>
+          <PortfolioCarousel/>
+        </div>
+    </ThemeProvider>
   );
 }
 
