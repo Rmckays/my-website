@@ -16,6 +16,13 @@ const portfolioProjects = [
         github: 'https://github.com/Rmckays/StockMaverick',
         website: 'https://stockmaverick.azurewebsites.net/',
         img: 'img/StockMav.JPG'
+    },
+    {
+        title: 'Tweet Tweet',
+        description: 'An App built using Node.js, React, and the Twitter API',
+        github: 'https://github.com/Rmckays/twitter_node',
+        website: 'https://tweet-tweet-node.herokuapp.com',
+        img: 'img/TweetTweet.JPG'
     }
 ];
 

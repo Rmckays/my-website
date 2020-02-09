@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import {ThemeProvider} from "@material-ui/styles";
 import teal from '@material-ui/core/colors/teal';
+import Box from "@material-ui/core/Box";
 
 const myTheme = createMuiTheme({
     palette: {
@@ -21,6 +22,9 @@ const myTheme = createMuiTheme({
         secondary: {
             main: teal[500],
         },
+        background: {
+            paper: "#333"
+        }
     },
 });
 
@@ -42,32 +46,32 @@ export default function MediaCard(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-            <CardActionArea href={props.github}>
-                <CardMedia
-                    className={classes.media}
-                    image={props.img}
-                    title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {props.projTitle}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        {props.projDescription}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <ThemeProvider theme={myTheme}>
+        <ThemeProvider theme={myTheme}>
+            <Card className={classes.root} bg="primary.main">
+                <CardActionArea href={props.github}>
+                    <CardMedia
+                        className={classes.media}
+                        image={props.img}
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                        <Typography bgcolor="primary.main" color="secondary" gutterBottom variant="h5" component="h2">
+                            {props.projTitle}
+                        </Typography>
+                        <Typography variant="body2" color="secondary" component="p">
+                            {props.projDescription}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions color="primary.main">
                     <a color="secondary" href={props.website}>
                         <LanguageIcon color="secondary"  fontSize="large"/>
                     </a>
                     <a color="secondary" href={props.github}>
                         <GitHubIcon color="secondary" fontSize="large"/>
                     </a>
-                </ThemeProvider>
-            </CardActions>
-        </Card>
+                </CardActions>
+            </Card>
+        </ThemeProvider>
     );
 }
