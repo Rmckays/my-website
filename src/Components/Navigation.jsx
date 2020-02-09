@@ -167,11 +167,11 @@ const Navigation = () => {
             </div>
             <Divider />
             {page}
-            <List color="primary">
+            <List>
                 {['Skills', 'Portfolio', 'About', 'Resume'].map((text, index) => (
                     <ListItem button page={text} key={text} onClick={navigateToPage}>
-                        <ListItemIcon color="primary">{getIcon(index)}</ListItemIcon>
-                        <ListItemText color="primary" primary={text}/>
+                        <ListItemIcon>{getIcon(index)}</ListItemIcon>
+                        <ListItemText color="primary" primary={<Typography color="primary">{text}</Typography>}/>
                     </ListItem>
                 ))}
             </List>
