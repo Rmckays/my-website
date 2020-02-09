@@ -1,21 +1,38 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import LanguageIcon from '@material-ui/icons/Language';
 import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import {ThemeProvider} from "@material-ui/styles";
+import teal from '@material-ui/core/colors/teal';
+
+const myTheme = createMuiTheme({
+    palette: {
+        type: 'dark',
+        primary: {
+            main: '#333',
+            hover: '#fff',
+        },
+        secondary: {
+            main: teal[500],
+        },
+    },
+});
 
 const useStyles = makeStyles({
     root: {
         maxWidth: 400,
         margin: '5rem',
+        display: 'inline-block'
     },
     media: {
         height: 300,
+        width: 400,
     },
 });
 
@@ -24,7 +41,7 @@ export default function MediaCard(props) {
 
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea href={props.website}>
                 <CardMedia
                     className={classes.media}
                     image={props.img}
@@ -40,12 +57,14 @@ export default function MediaCard(props) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Website
-                </Button>
-                <a href="https://github.com/Rmckays/ScoreReceiver">
-                    <GitHubIcon />
-                </a>
+                <ThemeProvider theme={myTheme}>
+                    <a color="secondary" href={props.website}>
+                        <LanguageIcon color="secondary"  fontSize="large"/>
+                    </a>
+                    <a color="secondary" href={props.github}>
+                        <GitHubIcon color="secondary" fontSize="large"/>
+                    </a>
+                </ThemeProvider>
             </CardActions>
         </Card>
     );

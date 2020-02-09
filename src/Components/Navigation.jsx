@@ -37,10 +37,10 @@ const myTheme = createMuiTheme({
         //     // Purple and green play nicely together.
         //     main: purple[500],
         // },
-        // secondary: {
-        //     // This is green.A700 as hex.
-        //     main: '#11cb5f',
-        // },
+        secondary: {
+            // This is green.A700 as hex.
+            main: '#11cb5f',
+        },
     },
 });
 
@@ -152,28 +152,28 @@ const Navigation = () => {
         <div className={classes.root}>
             <CssBaseline />
             <ThemeProvider theme={myTheme}>
-            <AppBar
-                position="fixed"
-                color="primary"
-                className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
-                })}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, open && classes.hide)}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap>
-                        Rustyn Simmons
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+                <AppBar
+                    position="fixed"
+                    color="primary"
+                    className={clsx(classes.appBar, {
+                        [classes.appBarShift]: open,
+                    })}
+                >
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            className={clsx(classes.menuButton, open && classes.hide)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" noWrap>
+                            Rustyn Simmons
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
             </ThemeProvider>
             <Drawer
                 className={classes.drawer}
