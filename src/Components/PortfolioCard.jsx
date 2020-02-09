@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         minHeight: 150,
         maxHeight: 375,
         maxWidth: 500,
-        margin: '5rem',
+        margin: '0 2rem',
         display: 'inline-block'
     },
     media: {
