@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
+import {orange} from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
     divRootLarge: {
@@ -37,6 +38,7 @@ const useStyles = makeStyles({
     introHeadingLarge: {
         marginTop: '0',
         fontSize: '3.5rem',
+        color: orange[300]
     },
     introHeading: {
         marginTop: '0',
@@ -46,7 +48,7 @@ const useStyles = makeStyles({
     divider: {
         width: '1px',
         height: '100%',
-        border: '2px solid #4db6ac'
+        border: '2px solid #ffb74d'
     },
     introParagraphLargeRight: {
         marginTop: '1.5rem',

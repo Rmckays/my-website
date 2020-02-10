@@ -4,8 +4,13 @@ import Grid from '@material-ui/core/Grid';
 import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import {teal} from "@material-ui/core/colors";
+import {orange} from "@material-ui/core/colors";
 import {useMediaQuery} from "@material-ui/core";
 import json2mq from "json2mq";
+import LanguageIcon from "@material-ui/icons/Language";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import CardActions from "@material-ui/core/CardActions";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles({
     root: {
@@ -17,11 +22,9 @@ const useStyles = makeStyles({
         width: '100vw'
     },
     avatar: {
-        backgroundColor: teal[300],
-        background: "url('img/Profphoto.JPG') center center/cover",
+        background: "url('img/logo.png') center center/cover",
         height: '30vh',
         width: '30vh',
-        borderRadius: '50%',
         margin: 'auto',
     },
     introParagraphLarge: {
@@ -44,11 +47,18 @@ const useStyles = makeStyles({
     introTitleLarge: {
         marginTop: '0',
         fontSize: '2.2rem',
+        color: orange[300]
     },
     introTitle: {
         marginTop: '0',
         fontSize: '1.5rem',
-    }
+        color: orange[300]
+    },
+    link: {
+        textDecoration: 'none',
+        fontSize: '1.5rem',
+        color: teal[300],
+    },
 });
 
 export default function Introduction() {
@@ -84,6 +94,11 @@ export default function Introduction() {
                         but I have always been a creative person and in 2018 I decided to transition into the programming
                         side of the business. I have been freelancing ever since.
                     </Typography>
+                    <br/>
+                    <a  className={classes.link} href='https://github.com/Rmckays'>
+                        See my Github: &nbsp;
+                        <GitHubIcon color="secondary" fontSize="medium"/>
+                    </a>
                 </Box>
             </Grid>
             <Grid item md={2} sm={0} xs={0}>

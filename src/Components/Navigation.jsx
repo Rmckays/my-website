@@ -19,8 +19,6 @@ import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import PersonIcon from '@material-ui/icons/Person';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-import {HashRouter, Redirect} from "react-router-dom";
-import PortfolioCarousel from "./Carousel";
 
 const drawerWidth = 240;
 
@@ -78,6 +76,11 @@ const useStyles = makeStyles(theme => ({
         }),
         marginLeft: 0,
     },
+    logo: {
+        width: '50px',
+        height: '50px',
+        margin: '0 1rem 0 0'
+    }
 }));
 
 const getIcon = (index) => {
@@ -120,12 +123,12 @@ const Navigation = () => {
                 skills.scrollIntoView();
                 break;
             case 'Portfolio':
-                // setPage(<Redirect to='#portfolio' />);
                 const portfolio = document.getElementById('portfolio');
                 portfolio.scrollIntoView();
                 break;
             case 'About':
-                setPage(<Redirect to='#about' />);
+                const about = document.getElementById('about');
+                about.scrollIntoView();
                 break;
         }
     };
@@ -150,6 +153,7 @@ const Navigation = () => {
                     >
                         <MenuIcon color="primary" />
                     </IconButton>
+                    <img src='img/tealLogo.png' className={classes.logo}/>
                     <Typography variant="h6" noWrap color="primary">
                         Rustyn Simmons
                     </Typography>
