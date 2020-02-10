@@ -116,12 +116,13 @@ const Navigation = () => {
 
         switch(navigationNode.innerText){
             case 'Skills':
-                setPage(<Redirect to='#skills' />);
+                const skills = document.getElementById('portfolio');
+                skills.scrollIntoView();
                 break;
             case 'Portfolio':
                 // setPage(<Redirect to='#portfolio' />);
-                const element = document.getElementById('portfolio');
-                element.scrollIntoView();
+                const portfolio = document.getElementById('portfolio');
+                portfolio.scrollIntoView();
                 break;
             case 'About':
                 setPage(<Redirect to='#about' />);

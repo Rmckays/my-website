@@ -18,7 +18,7 @@ const portfolioProjects = [
                 was build using ASP.NET Core 2.2 and includes full Oauth both 
                 on the IEX calls and the internal API. The front-end was built 
                 using Typescript, React, and MobX and includes full JWT 
-                authentication.  `,
+                authentication.`,
         github: 'https://github.com/Rmckays/StockMaverick',
         website: 'https://stockmaverick.azurewebsites.net/',
         img: 'img/StockMav.JPG'
@@ -44,9 +44,9 @@ const carouselCards = portfolioProjects.map((project, index) => {
 const PortfolioCarousel = () => {
     return (
         <div id="portfolio">
-        <Carousel animation="slide">
-            {carouselCards}
-        </Carousel>
+            <Carousel animation="slide">
+                {carouselCards}
+            </Carousel>
         </div>
     )
 };

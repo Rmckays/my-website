@@ -7,6 +7,7 @@ import {createMuiTheme} from "@material-ui/core/styles";
 import {teal} from "@material-ui/core/colors";
 import Introduction from "./Components/Introduction";
 import {BrowserRouter} from "react-router-dom";
+import SkillsBar from "./Components/SkillsBar";
 
 const myTheme = createMuiTheme({
     palette: {
@@ -32,6 +33,7 @@ function App() {
               <div className="App">
                   <Navigation/>
                   <Introduction/>
+                  <SkillsBar/>
                   <PortfolioCarousel/>
               </div>
           </ThemeProvider>

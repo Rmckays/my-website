@@ -82,7 +82,7 @@ export default function Introduction() {
                         Ever since I was a child I have been fascinated with computers. After graduating from college
                         I spent the majority of my career on the sales side of software. This provided me a stable career
                         but I have always been a creative person and in 2018 I decided to transition into the programming
-                        side of the business.
+                        side of the business. I have been freelancing ever since.
                     </Typography>
                 </Box>
             </Grid>
