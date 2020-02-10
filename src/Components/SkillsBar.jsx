@@ -91,6 +91,8 @@ export default function SkillsBar() {
                             Flask <br/>
                             NodeJS <br/>
                             Git <br/>
+                            SQL Server / MySQL <br/>
+                            {!matches ? <br/> : null}
                         </Typography>
                     </Box>
                 </Grid>
@@ -104,8 +106,10 @@ export default function SkillsBar() {
                             Javascript / Typescript <br/>
                             HTML5 <br/>
                             React / Angular <br/>
-                            Bootstrap / Semantic-UI / Material-UI<br/>
-                            CSS / Sass
+                            Semantic-UI / Material-UI<br/>
+                            Bootstrap / CSS / Sass <br/>
+                            Heroku / Azure <br/>
+                            {!matches ? <br/> : null}
                         </Typography>
                     </Box>
                 </Grid>

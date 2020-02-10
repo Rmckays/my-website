@@ -116,7 +116,7 @@ const Navigation = () => {
 
         switch(navigationNode.innerText){
             case 'Skills':
-                const skills = document.getElementById('portfolio');
+                const skills = document.getElementById('skills');
                 skills.scrollIntoView();
                 break;
             case 'Portfolio':

@@ -1,6 +1,11 @@
 import React from 'react';
 import MediaCard from "./PortfolioCard";
 import Carousel from 'react-material-ui-carousel'
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import {useMediaQuery} from "@material-ui/core";
+import json2mq from "json2mq";
+import {makeStyles} from "@material-ui/core/styles";
 
 
 const portfolioProjects = [
@@ -37,13 +42,42 @@ const portfolioProjects = [
     }
 ];
 
+const useStyles = makeStyles({
+    introHeadingLarge: {
+        marginTop: '0',
+        marginBottom: '3rem',
+        fontSize: '3.5rem',
+    },
+    introHeading: {
+        marginTop: '0',
+        fontSize: '2rem',
+        marginBottom: '1rem',
+        textAlign: 'center'
+    },
+});
+
 const carouselCards = portfolioProjects.map((project, index) => {
     return <MediaCard key={index} img={project.img} projTitle={project.title} projDescription={project.description} github={project.github} website={project.website}/>
 });
 
 const PortfolioCarousel = () => {
+    const classes = useStyles();
+
+    const matches = useMediaQuery(
+        json2mq({
+            maxWidth: 640,
+        }),
+    );
+
     return (
         <div id="portfolio">
+            <Grid container>
+                <Grid item xs={12}>
+                    <Typography className={!matches ? classes.introHeadingLarge : classes.introHeading} variant="body2" bg="secondary" color="secondary" component="h1" fontSize="large">
+                        Portfolio
+                    </Typography>
+                </Grid>
+            </Grid>
             <Carousel animation="slide">
                 {carouselCards}
             </Carousel>
