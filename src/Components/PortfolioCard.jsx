@@ -16,20 +16,26 @@ const useStyles = makeStyles({
     root: {
         minWidth: 200,
         minHeight: 150,
-        maxHeight: 375,
-        maxWidth: 500,
+        maxHeight: 625,
+        maxWidth: 900,
         margin: '0 2rem',
         display: 'inline-block'
     },
     media: {
         minWidth: 200,
         minHeight: 150,
-        maxHeight: 375,
-        maxWidth: 500,
+        maxHeight: 450,
+        maxWidth: 900,
     },
     largeScreen: {
-        width: 400,
-        height: 225,
+        width: 900,
+        height: 450,
+    },
+    cardTitle: {
+        fontSize: '2rem',
+    },
+    cardText: {
+        fontSize: '1.1rem',
     }
 });
 
@@ -51,17 +57,17 @@ export default function MediaCard(props) {
                     title="Contemplative Reptile"
                 />
                 <CardContent>
-                    <Typography color="primary" gutterBottom variant="h5" component="h2">
+                    <Typography className={classes.cardTitle} color="primary" gutterBottom variant="h5" component="h2">
                         {props.projTitle}
                     </Typography>
-                    <Typography variant="body2" color="primary" component="p">
+                    <Typography className={classes.cardText} variant="body2" color="primary" component="p">
                         {props.projDescription}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <a href={props.website}>
-                    <LanguageIcon color="primary"  fontSize="large"/>
+                    <LanguageIcon color="primary" fontSize="large"/>
                 </a>
                 <a href={props.github}>
                     <GitHubIcon color="primary" fontSize="large"/>

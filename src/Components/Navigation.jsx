@@ -19,7 +19,8 @@ import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import PersonIcon from '@material-ui/icons/Person';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-import {Redirect} from "react-router-dom";
+import {HashRouter, Redirect} from "react-router-dom";
+import PortfolioCarousel from "./Carousel";
 
 const drawerWidth = 240;
 
@@ -118,7 +119,9 @@ const Navigation = () => {
                 setPage(<Redirect to='#skills' />);
                 break;
             case 'Portfolio':
-                setPage(<Redirect to='#portfolio' />);
+                // setPage(<Redirect to='#portfolio' />);
+                const element = document.getElementById('portfolio');
+                element.scrollIntoView();
                 break;
             case 'About':
                 setPage(<Redirect to='#about' />);

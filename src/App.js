@@ -6,6 +6,7 @@ import {ThemeProvider} from "@material-ui/styles";
 import {createMuiTheme} from "@material-ui/core/styles";
 import {teal} from "@material-ui/core/colors";
 import Introduction from "./Components/Introduction";
+import {BrowserRouter} from "react-router-dom";
 
 const myTheme = createMuiTheme({
     palette: {
@@ -26,14 +27,15 @@ const myTheme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={myTheme}>
-        <div className="App">
-
-          <Navigation/>
-          <Introduction/>
-          <PortfolioCarousel/>
-        </div>
-    </ThemeProvider>
+      <BrowserRouter>
+          <ThemeProvider theme={myTheme}>
+              <div className="App">
+                  <Navigation/>
+                  <Introduction/>
+                  <PortfolioCarousel/>
+              </div>
+          </ThemeProvider>
+      </BrowserRouter>
   );
 }
 
