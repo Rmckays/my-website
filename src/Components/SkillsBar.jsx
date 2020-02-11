@@ -9,11 +9,11 @@ import {orange} from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
     divRootLarge: {
-        margin: '8rem auto',
+        margin: '4rem auto',
         width: '100vw'
     },
     divRoot: {
-        margin: '4rem auto',
+        margin: '2rem auto',
         width: '100vw'
     },
     root: {
@@ -32,8 +32,8 @@ const useStyles = makeStyles({
     introParagraph: {
         marginTop: '1rem',
         fontSize: '1rem',
-        textAlign: 'center'
-
+        textAlign: 'center',
+        marginBottom: '0'
     },
     introHeadingLarge: {
         marginTop: '0',
@@ -43,11 +43,18 @@ const useStyles = makeStyles({
     introHeading: {
         marginTop: '0',
         fontSize: '2rem',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: orange[300]
     },
     divider: {
         width: '1px',
         height: '100%',
+        border: '2px solid #ffb74d'
+    },
+    dividerWide: {
+        width: '60%',
+        margin: '1rem auto 0 auto',
+        height: '1px',
         border: '2px solid #ffb74d'
     },
     introParagraphLargeRight: {
@@ -56,8 +63,8 @@ const useStyles = makeStyles({
         textAlign: 'left'
     },
     introParagraphRight: {
-        marginTop: '1rem',
-        fontSize: '1rem',
+        // marginTop: '1rem',
+        fontSize: '1.1rem',
         textAlign: 'center'
     }
 });
@@ -79,6 +86,10 @@ export default function SkillsBar() {
                         Skills
                     </Typography>
                 </Grid>
+            </Grid>
+            <Grid item md={0} sm={12} xs={12}>
+                <Box className={matches ? classes.dividerWide : null}>
+                </Box>
             </Grid>
             <Grid container spacing={2} className={!matches ? classes.rootLarge : classes.root}>
                 <Grid item md={1} sm={0} xs={0}>

@@ -34,14 +34,16 @@ const useStyles = makeStyles(theme => ({
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        marginRight: drawerWidth,
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
+    title: {
+        flexGrow: 1,
+        display: 'flex',
+        alignItems: 'center'
     },
     hide: {
         display: 'none',
@@ -58,7 +60,7 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
     },
     content: {
         flexGrow: 1,
@@ -67,14 +69,14 @@ const useStyles = makeStyles(theme => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        marginLeft: -drawerWidth,
+        marginRight: -drawerWidth,
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
-        marginLeft: 0,
+        marginRight: 0,
     },
     logo: {
         width: '50px',
@@ -144,25 +146,27 @@ const Navigation = () => {
                 })}
             >
                 <Toolbar >
+                    <div className={classes.title}>
+                        <img src='img/tealLogo.png' className={classes.logo}/>
+                        <Typography variant="h5" noWrap color="primary">
+                            Rustyn Simmons
+                        </Typography>
+                    </div>
                     <IconButton
                         color="secondary"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, open && classes.hide)}
+                        edge="end"
+                        className={clsx(open && classes.hide)}
                     >
                         <MenuIcon color="primary" />
                     </IconButton>
-                    <img src='img/tealLogo.png' className={classes.logo}/>
-                    <Typography variant="h6" noWrap color="primary">
-                        Rustyn Simmons
-                    </Typography>
                 </Toolbar>
             </AppBar>
         <Drawer
             className={classes.drawer}
             variant="persistent"
-            anchor="left"
+            anchor="right"
             open={open}
             classes={{
                 paper: classes.drawerPaper,
@@ -170,7 +174,7 @@ const Navigation = () => {
         >
             <div className={classes.drawerHeader}>
                 <IconButton onClick={handleDrawerClose}>
-                    {theme.direction === 'ltr' ? <ChevronLeftIcon color="primary" /> : <ChevronRightIcon />}
+                    {theme.direction === 'rtl' ? <ChevronLeftIcon color="primary" /> : <ChevronRightIcon color="primary"/>}
                 </IconButton>
             </div>
             <Divider />

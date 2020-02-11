@@ -4,10 +4,11 @@ import Navigation from "./Components/Navigation";
 import PortfolioCarousel from "./Components/Carousel";
 import {ThemeProvider} from "@material-ui/styles";
 import {createMuiTheme} from "@material-ui/core/styles";
-import {teal} from "@material-ui/core/colors";
+import {orange, teal} from "@material-ui/core/colors";
 import Introduction from "./Components/Introduction";
 import {BrowserRouter} from "react-router-dom";
 import SkillsBar from "./Components/SkillsBar";
+import Footer from "./Components/Footer";
 
 const myTheme = createMuiTheme({
     palette: {
@@ -18,6 +19,9 @@ const myTheme = createMuiTheme({
         },
         secondary: {
             main: teal[300],
+        },
+        accent: {
+          main: orange[300],
         },
         background: {
             // paper: "#333"
@@ -35,6 +39,7 @@ function App() {
                   <Introduction/>
                   <SkillsBar/>
                   <PortfolioCarousel/>
+                  <Footer/>
               </div>
           </ThemeProvider>
       </BrowserRouter>

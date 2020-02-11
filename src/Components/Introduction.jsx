@@ -7,19 +7,20 @@ import {teal} from "@material-ui/core/colors";
 import {orange} from "@material-ui/core/colors";
 import {useMediaQuery} from "@material-ui/core";
 import json2mq from "json2mq";
-import LanguageIcon from "@material-ui/icons/Language";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import CardActions from "@material-ui/core/CardActions";
-import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles({
     root: {
-        margin: '5rem auto',
-        width: '100vw'
+        margin: '3.5rem auto 4rem auto',
+        padding: '2rem auto',
+        width: '100vw',
+        background: "url('img/backgroundImg.png') center center/cover",
     },
     rootLarge: {
-        margin: '10rem auto',
-        width: '100vw'
+        margin: '4rem auto',
+        height: '52vh',
+        width: '100vw',
+        background: "url('img/backgroundImg.png') center center/cover",
     },
     avatar: {
         background: "url('img/logo.png') center center/cover",
@@ -27,17 +28,23 @@ const useStyles = makeStyles({
         width: '30vh',
         margin: 'auto',
     },
+    avatarLarge: {
+        background: "url('img/logo.png') center center/cover",
+        height: '30vh',
+        width: '30vh',
+        margin: 'auto',
+        marginTop: '5rem'
+    },
     introParagraphLarge: {
-        marginTop: '1.5rem',
+        marginTop: '1rem',
         fontSize: '1.5rem',
     },
     introParagraph: {
         marginTop: '1rem',
-        fontSize: '1rem',
-
+        fontSize: '1.1rem',
     },
     introHeadingLarge: {
-        marginTop: '0',
+        marginTop: '4.5rem',
         fontSize: '3.5rem',
     },
     introHeading: {
@@ -47,17 +54,17 @@ const useStyles = makeStyles({
     introTitleLarge: {
         marginTop: '0',
         fontSize: '2.2rem',
-        color: orange[300]
+        color: orange[300],
     },
     introTitle: {
         marginTop: '0',
         fontSize: '1.5rem',
-        color: orange[300]
+        color: orange[300],
     },
     link: {
         textDecoration: 'none',
         fontSize: '1.5rem',
-        color: teal[300],
+        color: orange[300],
     },
 });
 
@@ -66,7 +73,7 @@ export default function Introduction() {
 
     const matches = useMediaQuery(
         json2mq({
-            maxWidth: 640,
+            maxWidth: 1080,
         }),
     );
 
@@ -77,7 +84,7 @@ export default function Introduction() {
                 </Box>
             </Grid>
             <Grid item md={5} sm={12} xs={12}>
-                <Box className={classes.avatar} p={6}>
+                <Box className={!matches ? classes.avatarLarge : classes.avatar} p={6}>
                 </Box>
             </Grid>
             <Grid item md={4} sm={12} xs={12}>
@@ -91,13 +98,13 @@ export default function Introduction() {
                     <Typography align="center" className={!matches ? classes.introParagraphLarge : classes.introParagraph} variant="body2" bg="secondary" color="secondary" component="p" fontSize="medium">
                         Ever since I was a child I have been fascinated with computers. After graduating from college
                         I spent the majority of my career on the sales side of software. This provided me a stable career
-                        but I have always been a creative person and in 2018 I decided to transition into the programming
+                        but I have always been a creative person. In 2018 I decided to transition into the programming
                         side of the business. I have been freelancing ever since.
                     </Typography>
                     <br/>
                     <a  className={classes.link} href='https://github.com/Rmckays'>
                         See my Github: &nbsp;
-                        <GitHubIcon color="secondary" fontSize="medium"/>
+                        <GitHubIcon color="accent" fontSize="medium"/>
                     </a>
                 </Box>
             </Grid>
