@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import {useMediaQuery} from "@material-ui/core";
 import json2mq from "json2mq";
 import {makeStyles} from "@material-ui/core/styles";
-import AutoRotatingCarousel from "material-auto-rotating-carousel/lib/AutoRotatingCarousel";
 
 
 const portfolioProjects = [
@@ -39,7 +38,7 @@ const portfolioProjects = [
             '5 random tweets based on either a user defined keyword or ' +
             'predefined Twitter users.  This technology was built using a ' +
             'Node back-end and React front-end and is completely responsive ' +
-            'and was deployed via Heroku.',
+            'and was deployed via Heroku. Tweet Tweet is fully responsive.',
         github: 'https://github.com/Rmckays/twitter_node',
         website: 'https://tweet-tweet-node.herokuapp.com',
         img: 'img/TweetTweet.JPG'
@@ -47,9 +46,9 @@ const portfolioProjects = [
     {
         title: 'Comet Chat',
         description: `Comet Chat is a real time chat application inspired by 
-                      the sunsets in my home state Arizona. The real time 
-                      interaction is handled via SignalR and all data is stored 
-                      in a SQL Server.` ,
+                      the sunsets in my home state Arizona. The back-end was built
+                      using ASP.NET Core 2.2 and SignalR. On the front-end React was
+                      implemented with Typescript and Redux.` ,
         github: 'https://github.com/Rmckays/CometChat',
         website: 'https://github.com/Rmckays/CometChat',
         img: 'img/CometChat.JPG'
@@ -79,7 +78,7 @@ const PortfolioCarousel = () => {
 
     const matches = useMediaQuery(
         json2mq({
-            maxWidth: 640,
+            maxWidth: 768,
         }),
     );
 

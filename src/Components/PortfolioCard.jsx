@@ -56,7 +56,7 @@ export default function MediaCard(props) {
 
     const matches = useMediaQuery(
         json2mq({
-            maxWidth: 416,
+            maxWidth: 768,
         }),
     );
 

@@ -66,6 +66,9 @@ const useStyles = makeStyles({
         // marginTop: '1rem',
         fontSize: '1.1rem',
         textAlign: 'center'
+    },
+    spacingLarge: {
+        marginRight: '9rem'
     }
 });
 
@@ -74,7 +77,13 @@ export default function SkillsBar() {
 
     const matches = useMediaQuery(
         json2mq({
-            maxWidth: 640,
+            maxWidth: 768,
+        }),
+    );
+
+    const medium = useMediaQuery(
+        json2mq({
+            maxWidth: 1024,
         }),
     );
 
@@ -92,12 +101,12 @@ export default function SkillsBar() {
                 </Box>
             </Grid>
             <Grid container spacing={2} className={!matches ? classes.rootLarge : classes.root}>
-                <Grid item md={1} sm={0} xs={0}>
+                <Grid item lg={1} sm={0} xs={0}>
                     <Box>
                     </Box>
                 </Grid>
-                <Grid item md={5} sm={12} xs={12}>
-                    <Box mx={6}>
+                <Grid item lg={5} md={6} sm={12} xs={12}>
+                    <Box className={!medium ? classes.spacingLarge : ''}>
                         <Typography gutterBottom={true} className={!matches ? classes.introParagraphLarge : classes.introParagraph} variant="body2" bg="secondary" color="secondary" component="div" fontSize="medium">
                             ASP.Net / C# <br/>
                             Python <br/>
@@ -109,12 +118,12 @@ export default function SkillsBar() {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item md={0} sm={0} xs={0}>
+                <Grid item lg={1} md={0} sm={0} xs={0}>
                     <Box className={!matches ? classes.divider : null}>
                     </Box>
                 </Grid>
                 <Grid item md={5} sm={12} xs={12}>
-                    <Box mx={6}>
+                    <Box>
                         <Typography gutterBottom={true} className={!matches ? classes.introParagraphLargeRight : classes.introParagraphRight} variant="body2" bg="secondary" color="secondary" component="p" fontSize="medium">
                             Javascript / Typescript <br/>
                             HTML5 <br/>
@@ -126,7 +135,7 @@ export default function SkillsBar() {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item md={1} sm={0} xs={0}>
+                <Grid item lg={1} sm={0} xs={0}>
                     <Box>
                     </Box>
                 </Grid>

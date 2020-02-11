@@ -73,22 +73,22 @@ export default function Introduction() {
 
     const matches = useMediaQuery(
         json2mq({
-            maxWidth: 1080,
+            maxWidth: 768,
         }),
     );
 
     return (
         <Grid container spacing={2} className={!matches ? classes.rootLarge : classes.root}>
-            <Grid item md={1} sm={0} xs={0}>
+            <Grid item lg={1} sm={0} xs={0}>
                 <Box>
                 </Box>
             </Grid>
-            <Grid item md={5} sm={12} xs={12}>
+            <Grid item lg={5} md={6} sm={12} xs={12}>
                 <Box className={!matches ? classes.avatarLarge : classes.avatar} p={6}>
                 </Box>
             </Grid>
-            <Grid item md={4} sm={12} xs={12}>
-                <Box mx={6}>
+            <Grid item lg={5} md={5} sm={12} xs={12}>
+                <Box >
                     <Typography className={!matches ? classes.introHeadingLarge : classes.introHeading} variant="body2" bg="secondary" color="secondary" component="h1" fontSize="large">
                         Rustyn Simmons
                     </Typography>
@@ -108,7 +108,7 @@ export default function Introduction() {
                     </a>
                 </Box>
             </Grid>
-            <Grid id="skills" item md={2} sm={0} xs={0}>
+            <Grid id="skills" item lg={1} sm={0} xs={0}>
                 <Box>
                 </Box>
             </Grid>

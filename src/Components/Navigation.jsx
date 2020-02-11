@@ -133,6 +133,10 @@ const Navigation = () => {
                 const about = document.getElementById('about');
                 about.scrollIntoView();
                 break;
+            case 'Resume':
+                const resume = document.getElementById('resume')
+                resume.scrollIntoView();
+                break;
         }
     };
 
