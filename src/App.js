@@ -10,6 +10,7 @@ import {BrowserRouter} from "react-router-dom";
 import SkillsBar from "./Components/SkillsBar";
 import Footer from "./Components/Footer";
 import ResumeButton from "./Components/ResumeButton";
+import About from "./Components/About";
 
 const myTheme = createMuiTheme({
     palette: {
@@ -40,6 +41,7 @@ function App() {
                   <Introduction/>
                   <SkillsBar/>
                   <PortfolioCarousel/>
+                  <About/>
                   <ResumeButton/>
                   <Footer/>
               </div>

@@ -112,8 +112,9 @@ export default function SkillsBar() {
                             Python <br/>
                             Flask <br/>
                             NodeJS <br/>
-                            Git <br/>
+                            Git / Bash<br/>
                             SQL Server / MySQL <br/>
+                            PostgreSQL / NoSQL <br/>
                             {!matches ? <br/> : null}
                         </Typography>
                     </Box>
@@ -128,6 +129,7 @@ export default function SkillsBar() {
                             Javascript / Typescript <br/>
                             HTML5 <br/>
                             React / Angular <br/>
+                            Redux / MobX <br/>
                             Semantic-UI / Material-UI<br/>
                             Bootstrap / CSS / Sass <br/>
                             Heroku / Azure <br/>
@@ -135,7 +137,7 @@ export default function SkillsBar() {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item lg={1} sm={0} xs={0}>
+                <Grid id="portfolio" item lg={1} sm={0} xs={0}>
                     <Box>
                     </Box>
                 </Grid>
