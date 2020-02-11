@@ -1,17 +1,21 @@
 import React from 'react';
 import MediaCard from "./PortfolioCard";
-import Carousel from 'react-material-ui-carousel'
+import Carousel from 'react-material-ui-carousel';
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import {useMediaQuery} from "@material-ui/core";
 import json2mq from "json2mq";
 import {makeStyles} from "@material-ui/core/styles";
+import AutoRotatingCarousel from "material-auto-rotating-carousel/lib/AutoRotatingCarousel";
 
 
 const portfolioProjects = [
     {
         title: 'Score Receiver',
-        description: 'An App built using Python Flask and React.',
+        description: `Score Receiver allows users to find historical NFL game data between 
+                      1980-2018. The back-end was built using with Python Flask and reads a 
+                      remote CSV file with historical game data. D3.js was used for charting 
+                      scores and Material-UI was used for styling. `,
         github: 'https://github.com/Rmckays/ScoreReceiver',
         website: 'https://score-receiver.herokuapp.com/',
         img: 'img/ScoreRec.JPG'
@@ -39,6 +43,16 @@ const portfolioProjects = [
         github: 'https://github.com/Rmckays/twitter_node',
         website: 'https://tweet-tweet-node.herokuapp.com',
         img: 'img/TweetTweet.JPG'
+    },
+    {
+        title: 'Comet Chat',
+        description: `Comet Chat is a real time chat application inspired by 
+                      the sunsets in my home state Arizona. The real time 
+                      interaction is handled via SignalR and all data is stored 
+                      in a SQL Server.` ,
+        github: 'https://github.com/Rmckays/CometChat',
+        website: 'https://github.com/Rmckays/CometChat',
+        img: 'img/CometChat.JPG'
     }
 ];
 
@@ -78,7 +92,7 @@ const PortfolioCarousel = () => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Carousel animation="slide">
+            <Carousel >
                 {carouselCards}
             </Carousel>
         </div>

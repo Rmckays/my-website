@@ -19,6 +19,7 @@ import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import PersonIcon from '@material-ui/icons/Person';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
+import {orange} from "@material-ui/core/colors";
 
 const drawerWidth = 240;
 
@@ -79,10 +80,10 @@ const useStyles = makeStyles(theme => ({
         marginRight: 0,
     },
     logo: {
-        width: '50px',
+        width: '60px',
         height: '50px',
         margin: '0 1rem 0 0'
-    }
+    },
 }));
 
 const getIcon = (index) => {
