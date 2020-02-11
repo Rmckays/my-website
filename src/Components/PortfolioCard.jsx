@@ -10,6 +10,7 @@ import json2mq from 'json2mq';
 import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import {useMediaQuery} from "@material-ui/core";
+import {orange} from "@material-ui/core/colors";
 
 
 const useStyles = makeStyles({
@@ -36,6 +37,17 @@ const useStyles = makeStyles({
     },
     cardText: {
         fontSize: '1.1rem',
+    },
+    icons: {
+        color: orange[300],
+    },
+    links: {
+        textDecoration: 'none',
+        color: orange[300],
+        fontSize: '1.2rem',
+        verticalAlign: 'top',
+        paddingBottom: '.5rem',
+        paddingLeft: '.5rem'
     }
 });
 
@@ -44,7 +56,7 @@ export default function MediaCard(props) {
 
     const matches = useMediaQuery(
         json2mq({
-            maxWidth: 375,
+            maxWidth: 416,
         }),
     );
 
@@ -66,11 +78,14 @@ export default function MediaCard(props) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <a href={props.website}>
-                    <LanguageIcon color="primary" fontSize="large"/>
+                <a className={classes.links} href={props.website}>
+                    Try It!
+                    <LanguageIcon className={classes.icons} fontSize="medium"/>
                 </a>
-                <a href={props.github}>
-                    <GitHubIcon color="primary" fontSize="large"/>
+                &nbsp; &nbsp;
+                <a className={classes.links} href={props.github}>
+                    Github:
+                    <GitHubIcon className={classes.icons} fontSize="medium"/>
                 </a>
             </CardActions>
         </Card>

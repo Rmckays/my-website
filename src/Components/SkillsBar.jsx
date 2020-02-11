@@ -52,7 +52,7 @@ const useStyles = makeStyles({
         border: '2px solid #ffb74d'
     },
     dividerWide: {
-        width: '60%',
+        width: '84%',
         margin: '1rem auto 0 auto',
         height: '1px',
         border: '2px solid #ffb74d'
@@ -79,7 +79,7 @@ export default function SkillsBar() {
     );
 
     return (
-        <div id="skills" className={!matches ? classes.divRootLarge : classes.divRoot}>
+        <div className={!matches ? classes.divRootLarge : classes.divRoot}>
             <Grid container>
                 <Grid item xs={12}>
                     <Typography className={!matches ? classes.introHeadingLarge : classes.introHeading} variant="body2" bg="secondary" color="secondary" component="h1" fontSize="large">

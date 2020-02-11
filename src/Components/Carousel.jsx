@@ -70,7 +70,7 @@ const PortfolioCarousel = () => {
     );
 
     return (
-        <div id="portfolio">
+        <div id="portfolio" >
             <Grid container>
                 <Grid item xs={12}>
                     <Typography className={!matches ? classes.introHeadingLarge : classes.introHeading} variant="body2" bg="secondary" color="secondary" component="h1" fontSize="large">

@@ -108,7 +108,7 @@ export default function Introduction() {
                     </a>
                 </Box>
             </Grid>
-            <Grid item md={2} sm={0} xs={0}>
+            <Grid id="skills" item md={2} sm={0} xs={0}>
                 <Box>
                 </Box>
             </Grid>
